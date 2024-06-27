@@ -1,0 +1,103 @@
+body {
+  background-image: url("bgimage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative; /* Needed for absolute positioning of the button */
+}
+
+.image-container {
+  position: relative;
+  float: left; /* Changed from right to left */
+  width: 50%;
+  height: 70vh; /* Adjusted to 70vh for a more meaningful height */
+  display: flex;
+  align-items: center; /* Align items to the center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.image-container img {
+  max-width: 80%; /* Ensure the image scales correctly */
+  max-height: 100%; /* Ensure the image scales correctly */
+}
+
+#scroll-button {
+  margin-top: 20px; /* Space above the button */
+  padding: 10px 20px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  position: absolute; /* Positions the button within the container */
+  bottom: 20px; /* Positions the button at the bottom */
+  left: 50%; /* Centers the button horizontally */
+  transform: translateX(
+    -50%
+  ); /* Adjusts for half the button width to truly center */
+  font-size: 14px; /* Make button text larger */
+  border-radius: 5px; /* Add some border radius */
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+#scroll-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+h2 {
+  color: #80ced7;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: xx-large;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.transparent-arrow {
+  color: rgba(255, 255, 255, 0.5); /* White color with 50% opacity */
+  font-size: 20px; /* Adjust font size as needed */
+  background-color: rgba(
+    76,
+    175,
+    80,
+    0.5
+  ); /* Green background with 50% opacity */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.transparent-arrow:hover {
+  background-color: rgba(
+    69,
+    160,
+    73,
+    0.5
+  ); /* Slightly darker green with 50% opacity */
+  transform: translateX(5px);
+}
+
+.transparent-arrow::after {
+  content: " ";
+  display: inline-block;
+  margin-left: 10px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid rgba(255, 255, 255, 0.5); /* White border with 50% opacity */
+  border-top: 2px solid rgba(255, 255, 255, 0.5); /* White border with 50% opacity */
+  transform: rotate(45deg);
+  transition: margin-left 0.3s, transform 0.3s;
+}
+
+.transparent-arrow:hover::after {
+  margin-left: 15px;
+  transform: rotate(45deg) translateX(5px);
+}

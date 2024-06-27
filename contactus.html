@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - In On Shoes</title>
+    <style>
+      /* Your existing CSS styles */
+      body {
+        background-color: #87a39d;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .custom-navbar {
+        background-color: #a8ccca;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .custom-navbar .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .custom-navbar .navbar-links {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .custom-navbar .navbar-links li {
+        margin-right: 20px;
+      }
+
+      .custom-navbar .navbar-links li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+
+      .custom-navbar .navbar-links li a:hover {
+        color: #5a0e2c;
+      }
+
+      .custom-navbar .navbar-buttons {
+        display: flex;
+        align-items: center;
+      }
+
+      .custom-navbar .navbar-buttons button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      .custom-navbar .navbar-buttons button:hover {
+        color: #5a0e2c;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        font-family: inherit;
+        gap: 10px;
+        padding: 20px;
+        background-color: #171717;
+        border-radius: 20px;
+        margin: 40px auto;
+        max-width: 500px;
+      }
+
+      .form-heading {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #64ffda;
+        font-size: 1.5em;
+      }
+
+      .form-field {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+      }
+
+      .input-field {
+        flex: 1;
+        background: none;
+        border: none;
+        outline: none;
+        color: #ccd6f6;
+        padding: 0.6em;
+        border-radius: 10px;
+        box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+      }
+
+      .sendMessage-btn {
+        cursor: pointer;
+        margin-top: 20px;
+        padding: 1em;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background-color: #64ffda;
+        color: #000;
+        font-weight: bold;
+        transition: all ease-in-out 0.3s;
+      }
+
+      .sendMessage-btn:hover {
+        background-color: #5a0e2c;
+        color: #fff;
+        box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+      }
+
+      .custom-footer {
+        background-color: #313f4e;
+        color: #ecf0f1;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-about,
+      .footer-links,
+      .footer-contact {
+        margin-bottom: 20px;
+      }
+
+      .footer-about h2,
+      .footer-links h2,
+      .footer-contact h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #ecf0f1;
+      }
+
+      .footer-about p,
+      .footer-contact p {
+        font-size: 16px;
+        color: #bdc3c7;
+      }
+
+      .footer-links ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin: 5px 0;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #e74c3c;
+      }
+
+      .footer-contact .footer-social {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-contact .social-icon {
+        font-size: 24px;
+        margin: 0 10px;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+      }
+
+      .footer-contact .social-icon:hover {
+        color: #e74c3c;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #bdc3c7;
+        padding-top: 20px;
+        margin-top: 20px;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+        color: #bdc3c7;
+      }
+
+      @media (min-width: 768px) {
+        .custom-navbar {
+          padding: 15px 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="custom-navbar">
+      <a href="#" class="navbar-brand">👟</a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shoe1.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      <div class="navbar-buttons">
+        <button onclick="alert('Feel free to contact us.');">🔍</button>
+        <button onclick="alert('I hope you liked our stock items.');">⋮</button>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="form-card1">
+      <div class="form-card2">
+        <form class="form" id="contactForm" onsubmit="return validateForm()">
+          <p class="form-heading">Get In Touch With Us</p>
+
+          <div class="form-field">
+            <input
+              required
+              placeholder="Name"
+              class="input-field"
+              type="text"
+              id="name"
+            />
+          </div>
+
+          <div class="form-field">
+            <input
+              required
+              placeholder="Email"
+              class="input-field"
+              type="email"
+              id="email"
+            />
+          </div>
+
+          <div class="form-field">
+            <input
+              required
+              placeholder="Subject"
+              class="input-field"
+              type="text"
+              id="subject"
+            />
+          </div>
+
+          <div class="form-field">
+            <textarea
+              required
+              placeholder="Message"
+              cols="30"
+              rows="3"
+              class="input-field"
+              id="message"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="sendMessage-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="custom-footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h2>About Us</h2>
+          <p>
+            We offer a wide range of branded shoes to suit every style and need.
+            Your choice, our responsibility.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shoe1.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h2>Contact Us</h2>
+          <p>
+            Email:
+            <a href="mailto:kkhushi24@tbc.edu.np">kkhushi24@tbc.edu.np</a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:khushi7.all@gmail.com">khushi7.all@gmail.com</a>
+          </p>
+          <p>Phone: +977 9823677741</p>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/jaiswalkhushi285?mibextid=ZbWKwL"
+              class="social-icon"
+              >🔵</a
+            >
+            <a href="https://www.instagram.com/khushi_all/" class="social-icon"
+              >🐦</a
+            >
+            <a href="https://www.instagram.com/khushi_all/" class="social-icon"
+              >📸</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 ShoeVerse. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript for smooth scroll and form validation -->
+    <script>
+      function validateForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var subject = document.getElementById("subject").value;
+        var message = document.getElementById("message").value;
+
+        // Simple validation
+        if (
+          name.trim() === "" ||
+          email.trim() === "" ||
+          subject.trim() === "" ||
+          message.trim() === ""
+        ) {
+          alert("Please fill in all fields.");
+          return false;
+        }
+
+        // Email validation using regular expression
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+        // If all validations pass, form submission is allowed
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset(); // Reset the form after submission
+        return true;
+      }
+    </script>
+  </body>
+</html>

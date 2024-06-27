@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME PAGE OF SHOES</title>
+    <style>
+      /* Global styles */
+      body {
+        background-color: #bed4e3;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Custom Navbar Styles */
+      .custom-navbar {
+        background-color: #313f4e;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .custom-navbar .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ecf0f1;
+        text-decoration: none;
+      }
+
+      .custom-navbar .navbar-links {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .custom-navbar .navbar-links li {
+        margin-right: 20px;
+      }
+
+      .custom-navbar .navbar-links li a {
+        text-decoration: none;
+        color: #ecf0f1;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+
+      .custom-navbar .navbar-links li a:hover {
+        color: #869ab1;
+      }
+
+      .custom-navbar .navbar-buttons button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 20px;
+        transition: color 0.3s ease;
+        color: #ecf0f1;
+      }
+
+      .custom-navbar .navbar-buttons button:hover {
+        color: #e74c3c;
+      }
+
+      /* Main Container */
+      .main-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #78a7b2;
+        border-radius: 56px;
+        box-shadow: 0 4px 8px rgba(33, 43, 135, 0.1);
+      }
+
+      .container {
+        flex: 1;
+        margin-top: 20px;
+      }
+
+      .box {
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #bdc3c7;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        width: 900px; /* Adjust the width to make it smaller */
+        margin: 0 auto; /* Center the box */
+      }
+
+      .box:hover {
+        box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+        border: 1px solid #487491;
+      }
+
+      .box .title {
+        font-size: 1.5rem; /* Adjusted font size */
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        color: #2a577e;
+        text-align: center; /* Center the text */
+      }
+
+      .box div strong {
+        font-size: 1rem; /* Adjusted font size */
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+        display: block; /* Ensures it takes up full width */
+        text-align: center; /* Center the text */
+      }
+
+      .box div p {
+        margin: 0;
+        font-size: 0.9rem; /* Adjusted font size */
+        line-height: 1.5;
+        color: #666;
+        text-align: center; /* Center the text */
+      }
+
+      /* Additional Styling for Image Section */
+      .cool {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        position: relative; /* Ensure relative positioning for absolute children */
+      }
+
+      .slider {
+        max-width: 100%; /* Ensure the slider fits within its container */
+        overflow: hidden; /* Hide overflowing images */
+        position: relative; /* Position the images relative to the slider */
+      }
+
+      .slider-img {
+        width: 100%; /* Make images fill the slider */
+        display: none; /* Hide all images by default */
+      }
+
+      .slider-img:first-child {
+        display: block; /* Show the first image initially */
+      }
+
+      /* Gallery Section */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(154, 123, 123, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .gallery-item .content {
+        padding: 15px;
+        background-color: #5e89a5;
+        border: 1px solid #995858;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .gallery-item .content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #0c0c0c;
+      }
+
+      .gallery-item .content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #000000;
+      }
+
+      /* Responsive Adjustments */
+      @media (min-width: 768px) {
+        .main-container {
+          flex-direction: row;
+        }
+      }
+
+      .container {
+        margin-top: 0;
+        margin-left: 20px;
+      }
+
+      .cool {
+        margin-top: 0;
+        margin-left: 20px;
+      }
+      .custom-footer {
+        background-color: #313f4e;
+        color: #ecf0f1;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-about,
+      .footer-links,
+      .footer-contact {
+        margin-bottom: 20px;
+      }
+
+      .footer-about h2,
+      .footer-links h2,
+      .footer-contact h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #ecf0f1;
+      }
+
+      .footer-about p,
+      .footer-contact p {
+        font-size: 16px;
+        color: #bdc3c7;
+      }
+
+      .footer-links ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin: 5px 0;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #e74c3c;
+      }
+
+      .footer-contact .footer-social {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-contact .social-icon {
+        font-size: 24px;
+        margin: 0 10px;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+      }
+
+      .footer-contact .social-icon:hover {
+        color: #e74c3c;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #bdc3c7;
+        padding-top: 20px;
+        margin-top: 20px;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+        color: #bdc3c7;
+      }
+
+      @media (min-width: 768px) {
+        .footer-container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+
+        .footer-about,
+        .footer-links,
+        .footer-contact {
+          flex: 1;
+          max-width: 300px;
+          margin-bottom: 0;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .gallery-item {
+          flex: 1 1 calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-item {
+          flex: 1 1 calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .gallery-item {
+          flex: 1 1 calc(100% - 10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="custom-navbar">
+      <a href="#" class="navbar-brand">👟</a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shoe1.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      <div class="navbar-buttons">
+        <button onclick="alert('Welcome. What do you want to search?');">
+          🔍
+        </button>
+        <button
+          onclick="alert('You can get to know us from about us section 😊');"
+        >
+          ⋮
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+      <div class="box">
+        <span class="title">UNIVERSE OF SHOES</span>
+        <div>
+          <strong>GET THE BRANDED SHOES</strong>
+          <p>
+            Your choice, our responsibility. Explore a world of premium
+            footwear.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image Slider Section -->
+      <div class="cool">
+        <div class="slider">
+          <img
+            class="slider-img"
+            src="nike air jordan sneakers/3.png"
+            alt="Nike Air Jordan Sneakers"
+          />
+          <img
+            class="slider-img"
+            src="dr martens 1460 black/3.png"
+            alt="Dr Martens 1460 Black"
+          />
+          <img
+            class="slider-img"
+            src="New Balance 990 v5 Grey/4.png"
+            alt="New Balance 990 v5 Grey"
+          />
+          <img
+            class="slider-img"
+            src="Adidas Crazy 1 ADV Sock White/4.png"
+            alt="Adidas Crazy 1 ADV Sock White"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="container">
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="nike air jordan sneakers/7.png" alt="Nike Air Jordans" />
+          <div class="content">
+            <h3>Nike Air Jordans</h3>
+            <p>High-quality trainers designed for comfort and style.</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="dr martens 1460 black/3.png" alt="Dr Martens 1460 Black" />
+          <div class="content">
+            <h3>Dr Martens 1460 Black</h3>
+            <p>Iconic boots known for durability and distinctive style.</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="New Balance 990 v5 Grey/4.png"
+            alt="New Balance 990 v5 Grey"
+          />
+          <div class="content">
+            <h3>New Balance 990 v5 Grey</h3>
+            <p>Comfortable running shoes with advanced cushioning.</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="Adidas Crazy 1 ADV Sock White/4.png"
+            alt="Adidas Crazy 1 ADV Sock White"
+          />
+          <div class="content">
+            <h3>Adidas Crazy 1 ADV Sock White</h3>
+            <p>Iconic boots known for durability and distinctive style.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="custom-footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h2>About Us</h2>
+          <p>
+            We offer a wide range of branded shoes to suit every style and need.
+            Your choice, our responsibility.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shoe1.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h2>Contact Us</h2>
+          <p>
+            Email:
+            <a href="mailto:kkhushi24@tbc.edu.np">kkhushi24@tbc.edu.np</a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:khushi7.all@gmail.com">khushi7.all@gmail.com</a>
+          </p>
+          <p>Phone: +977 9823677741</p>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/jaiswalkhushi285?mibextid=ZbWKwL"
+              class="social-icon"
+              >🔵</a
+            >
+            <a href="https://www.instagram.com/khushi_all/" class="social-icon"
+              >🐦</a
+            >
+            <a href="https://www.instagram.com/khushi_all/" class="social-icon"
+              >📸</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2022 ShoeVerse. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Slider -->
+    <script>
+      let slideIndex = 0;
+      carousel();
+
+      function carousel() {
+        let i;
+        const slides = document.getElementsByClassName("slider-img");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none"; // Hide all images
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1; // Restart slideshow from the first image
+        }
+        slides[slideIndex - 1].style.display = "block"; // Display current image
+        setTimeout(carousel, 3000); // Change image every 3 seconds
+      }
+    </script>
+  </body>
+</html>

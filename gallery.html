@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery Page</title>
+    <style>
+      /* Global styles */
+      body {
+        background-color: #bed4e3;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Custom Navbar Styles */
+      .custom-navbar {
+        background-color: #313f4e;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .custom-navbar .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ecf0f1;
+        text-decoration: none;
+      }
+
+      .custom-navbar .navbar-links {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .custom-navbar .navbar-links li {
+        margin-right: 20px;
+      }
+
+      .custom-navbar .navbar-links li a {
+        text-decoration: none;
+        color: #ecf0f1;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+
+      .custom-navbar .navbar-links li a:hover {
+        color: #869ab1;
+      }
+
+      .custom-navbar .navbar-buttons button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 20px;
+        transition: color 0.3s ease;
+        color: #ecf0f1;
+      }
+
+      .custom-navbar .navbar-buttons button:hover {
+        color: #e74c3c;
+      }
+
+      /* Gallery Section */
+      .gallery-container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(154, 123, 123, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .gallery-item .content {
+        padding: 15px;
+        background-color: #5e89a5;
+        border: 1px solid #995858;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .gallery-item .content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #0c0c0c;
+      }
+
+      .gallery-item .content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #000000;
+      }
+
+      .line {
+        border-bottom: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .gallery-item {
+          flex: 1 1 calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .gallery-item {
+          flex: 1 1 calc(100% - 10px);
+        }
+      }
+      .custom-footer {
+        background-color: #313f4e;
+        color: #ecf0f1;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-about,
+      .footer-links,
+      .footer-contact {
+        margin-bottom: 20px;
+      }
+
+      .footer-about h2,
+      .footer-links h2,
+      .footer-contact h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #ecf0f1;
+      }
+
+      .footer-about p,
+      .footer-contact p {
+        font-size: 16px;
+        color: #bdc3c7;
+      }
+
+      .footer-links ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin: 5px 0;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #e74c3c;
+      }
+
+      .footer-contact .footer-social {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-contact .social-icon {
+        font-size: 24px;
+        margin: 0 10px;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+      }
+
+      .footer-contact .social-icon:hover {
+        color: #e74c3c;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #bdc3c7;
+        padding-top: 20px;
+        margin-top: 20px;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+        color: #bdc3c7;
+      }
+
+      @media (min-width: 768px) {
+        .footer-container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+
+        .footer-about,
+        .footer-links,
+        .footer-contact {
+          flex: 1;
+          max-width: 300px;
+          margin-bottom: 0;
+        }
+      }
+      @media (max-width: 1200px) {
+        .gallery-item {
+          flex: 1 1 calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-item {
+          flex: 1 1 calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .gallery-item {
+          flex: 1 1 calc(100% - 10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="custom-navbar">
+      <a href="#" class="navbar-brand">👟</a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shoe1.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      <div class="navbar-buttons">
+        <button onclick="alert('Welcome. What do you want to search?');">
+          🔍
+        </button>
+        <button
+          onclick="alert('You can get to know us from about us section 😊');"
+        >
+          ⋮
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery-container">
+      <div class="gallery">
+        <div class="gallery-item">
+          <img
+            src="Adidas Crazy 1 ADV Sock White/5.png"
+            alt="Adidas Crazy 1 ADV Sock White"
+          />
+          <div class="content">
+            <h3>Adidas Crazy 1 ADV Sock White</h3>
+            <p>High-quality sneakers with a modern design.</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="gallery-item">
+          <img
+            src="balenciaga trainers gucci shoes/1.png"
+            alt="Balenciaga Trainers Gucci Shoes"
+          />
+          <div class="content">
+            <h3>Balenciaga Trainers Gucci Shoes</h3>
+            <p>Exclusive trainers with a unique style.</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="gallery-item">
+          <img src="dr martens 1460 black/3.png" alt="Dr Martens 1460 Black" />
+          <div class="content">
+            <h3>Dr Martens 1460 Black</h3>
+            <p>Iconic boots known for durability and distinctive style.</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="gallery-item">
+          <img
+            src="New Balance 990 v5 Grey/4.png"
+            alt="New Balance 990 v5 Grey"
+          />
+          <div class="content">
+            <h3>New Balance 990 v5 Grey</h3>
+            <p>Comfortable running shoes with advanced cushioning.</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="gallery-item">
+          <img
+            src="nike air jordan sneakers/3.png"
+            alt="Nike Air Jordan Sneakers"
+          />
+          <div class="content">
+            <h3>Nike Air Jordan Sneakers</h3>
+            <p>High-quality trainers designed for comfort and style.</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="gallery-item">
+          <img src="nike air jordan sneakers/7.png" alt="Nike Air Jordans" />
+          <div class="content">
+            <h3>Nike Air Jordans</h3>
+            <p>Exclusive trainers with a unique style</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="gallery-item">
+          <img src="nike air jordan sneakers/11.png" alt="Nike Air Jordans" />
+          <div class="content">
+            <h3>Nike Air Jordans</h3>
+            <p>High-quality trainers designed for comfort and style.</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="gallery-item">
+          <img src="nike air jordan sneakers/15.png" alt="Nike Air Jordans" />
+          <div class="content">
+            <h3>Nike Air Jordans</h3>
+            <p>Comfortable running shoes with advanced cushioning.</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="gallery-item">
+          <img src="nike air jordan sneakers/19.png" alt="Nike Air Jordans" />
+          <div class="content">
+            <h3>Nike Air Jordans</h3>
+            <p>High-quality trainers designed for comfort and style.</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="gallery-item">
+          <img src="nike air jordan sneakers/23.png" alt="Nike Air Jordans" />
+          <div class="content">
+            <h3>Nike Air Jordans</h3>
+            <p>High-quality trainers designed for comfort and style.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="custom-footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h2>About Us</h2>
+          <p>
+            We offer a wide range of branded shoes to suit every style and need.
+            Your choice, our responsibility.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shoe1.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h2>Contact Us</h2>
+          <p>
+            Email:
+            <a href="mailto:kkhushi24@tbc.edu.np">kkhushi24@tbc.edu.np</a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:khushi7.all@gmail.com">khushi7.all@gmail.com</a>
+          </p>
+          <p>Phone: +977 9823677741</p>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/jaiswalkhushi285?mibextid=ZbWKwL"
+              class="social-icon"
+              >🔵</a
+            >
+            <a href="https://www.instagram.com/khushi_all/" class="social-icon"
+              >🐦</a
+            >
+            <a href="https://www.instagram.com/khushi_all/" class="social-icon"
+              >📸</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Shoe Store. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balenciaga Trainers Gucci</title>
+    <style>
+      body {
+        background-image: url("balenciagablur.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        position: relative;
+      }
+
+      .image-container {
+        position: relative;
+        float: left;
+        width: 50%;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -100px;
+        filter: drop-shadow(25px 25px 20px rgb(1, 1, 33));
+      }
+
+      .image-container img {
+        max-width: 80%;
+        max-height: 100%;
+      }
+
+      #scroll-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        border-radius: 5px;
+        background-color: #2b2b2d;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      #scroll-button:hover {
+        background-color: #a6a6a8;
+      }
+
+      h2,
+      h1 {
+        text-align: center;
+        filter: drop-shadow(20px 20px 20px #9d9daf);
+      }
+
+      h2 {
+        color: #000000;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 50px;
+        font-weight: bolder;
+        margin-top: 70px;
+      }
+
+      h1 {
+        color: #010a0b;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 50px;
+        font-weight: bolder;
+        margin-top: 10px;
+      }
+
+      .card {
+        max-width: 650px;
+        margin: 20px auto;
+        border-radius: 30px;
+        background: #212121;
+        box-shadow: 15px 15px 30px rgb(25, 25, 25),
+          -15px -15px 30px rgb(60, 60, 60);
+        padding: 20px;
+        color: white;
+      }
+
+      .card h3 {
+        font-size: 24px;
+        text-align: center;
+        color: #fff;
+      }
+
+      .card p {
+        text-align: center;
+        color: #ddd;
+      }
+
+      .card button {
+        background-color: #b1bdd9;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin: 10px 5px;
+      }
+
+      .card button.save-button {
+        background-color: #b7c1e1;
+      }
+
+      .takesmallarea {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-50%);
+      }
+
+      .takesmallarea img {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: transform 0.3s;
+      }
+
+      .takesmallarea img:hover {
+        transform: scale(1.1);
+      }
+      /* Custom Navbar Styles */
+      .custom-navbar {
+        background-color: #e0f2f1;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .custom-navbar .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .custom-navbar .navbar-links {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex: 1; /* Allow flex-grow */
+        justify-content: center; /* Center the links */
+      }
+
+      .custom-navbar .navbar-links li {
+        margin-right: 20px;
+      }
+
+      .custom-navbar .navbar-links li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+
+      .custom-navbar .navbar-links li a:hover {
+        color: #5a0e2c;
+      }
+
+      .custom-navbar .navbar-buttons {
+        display: flex;
+        align-items: center;
+      }
+
+      .custom-navbar .navbar-buttons button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      .custom-navbar .navbar-buttons button:hover {
+        color: #5a0e2c;
+      }
+      .custom-footer {
+        background-color: #313f4e;
+        color: #ecf0f1;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-about,
+      .footer-links,
+      .footer-contact {
+        margin-bottom: 20px;
+      }
+
+      .footer-about h2,
+      .footer-links h2,
+      .footer-contact h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #ecf0f1;
+      }
+
+      .footer-about p,
+      .footer-contact p {
+        font-size: 16px;
+        color: #bdc3c7;
+      }
+
+      .footer-links ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin: 5px 0;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #e74c3c;
+      }
+
+      .footer-contact .footer-social {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-contact .social-icon {
+        font-size: 24px;
+        margin: 0 10px;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+      }
+
+      .footer-contact .social-icon:hover {
+        color: #e74c3c;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #bdc3c7;
+        padding-top: 20px;
+        margin-top: 20px;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+        color: #bdc3c7;
+      }
+
+      @media (min-width: 768px) {
+        .footer-container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+
+        .footer-about,
+        .footer-links,
+        .footer-contact {
+          flex: 1;
+          max-width: 300px;
+          margin-bottom: 0;
+        }
+      }
+      @media (max-width: 1200px) {
+        .gallery-item {
+          flex: 1 1 calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-item {
+          flex: 1 1 calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .gallery-item {
+          flex: 1 1 calc(100% - 10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="custom-navbar">
+      <a href="#" class="navbar-brand">Balenciaga Trainers Gucci</a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shoe1.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      <div class="navbar-buttons">
+        <button onclick="alert('Implement your search functionality here');">
+          🔍
+        </button>
+        <button onclick="alert('Implement more options here');">⋮</button>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Balenciaga Trainers Gucci</h2>
+      <h1>$170</h1>
+      <div id="image-container" class="image-container">
+        <img
+          id="current-image"
+          src="balenciaga trainers gucci shoes/1.png"
+          alt="Image"
+        />
+        <button id="scroll-button" class="transparent-arrow">➤</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const imageElement = document.getElementById("current-image");
+        const button = document.getElementById("scroll-button");
+        let imageIndex = 0;
+
+        const images = [
+          "balenciaga trainers gucci shoes/2.png",
+          "balenciaga trainers gucci shoes/1.png",
+          "balenciaga trainers gucci shoes/3.png",
+        ];
+
+        button.addEventListener("click", function () {
+          imageIndex++;
+          if (imageIndex >= images.length) {
+            imageIndex = 0;
+          }
+          imageElement.src = images[imageIndex];
+        });
+      });
+    </script>
+
+    <div class="card">
+      <h3>Balenciaga Trainers Gucci</h3>
+      <hr />
+      <p>
+        Balenciaga trainers are renowned for their bold, chunky designs and
+        innovative, fashion-forward aesthetics. Gucci shoes blend classic
+        Italian craftsmanship with modern flair, featuring iconic motifs like
+        the double G logo and horsebit detailing.
+      </p>
+      <div style="text-align: center">
+        <button>❤️</button>
+        <button class="save-button">Buy</button>
+      </div>
+    </div>
+    <button class="nav-button" onclick="location.href='shoe1.html'">⯇</button>
+    <button class="nav-button" onclick="location.href='shoe3.html'">⯈</button>
+    <!-- Footer Section -->
+    <footer class="custom-footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h2>About Us</h2>
+          <p>
+            We offer a wide range of branded shoes to suit every style and need.
+            Your choice, our responsibility.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shoe1.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h2>Contact Us</h2>
+          <p>
+            Email:
+            <a href="mailto:kkhushi24@tbc.edu.np">kkhushi24@tbc.edu.np</a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:khushi7.all@gmail.com">khushi7.all@gmail.com</a>
+          </p>
+          <p>Phone: +977 9823377741</p>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/jaiswalkhushi285?mibextid=ZbWKwL"
+              class="social-icon"
+              >🔵</a
+            >
+            <a href="https://www.instagram.com/khushi_all/" class="social-icon"
+              >🐦</a
+            >
+            <a href="https://www.instagram.com/khushi_all/" class="social-icon"
+              >📸</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 ShoeVerse. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
